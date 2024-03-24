@@ -1,0 +1,104 @@
+ </section>
+    <!-- Nos Services -->
+    <div class="container-color-style">
+        <div class="container ">
+           
+            <h2 class="text-center" style="color: white; padding-bottom: 15px;">À propos de For-Trade</h2>
+            <div class="row align-items-stretch">
+                <!-- Colonne de gauche pour le long paragraphe -->
+                <div class="col-md-6">
+                    <div class="content-container" style="font-size: 16px;  ">
+                        <!-- Adjusted font size and added scrolling -->
+                        <h1 style="font-size: 24px; color: orange;">Investissement Décentralisé avec For-Trade</h1>
+                        <!-- Reduced title font size -->
+                        <h2 style="font-size: 18px;">Création de Tokens d'Entreprise</h2>
+                        <!-- Reduced subtitle font size -->
+                        <p>Avec For-Trade, les entreprises ont l'opportunité unique de générer leurs propres tokens, ce
+                            qui constitue une méthode révolutionnaire pour sécuriser des investissements...</p>
+
+                        <h2 style="font-size: 24px; color: orange;">Avantages de l'InvestissementDécentralisé</h2> 
+                        <ul>
+                            <li><span class="highlight" >Capitalisation sur la Performance</span>: À mesure que votre
+                                entreprise se développe et génère des revenus...</li>
+                            <li><span class="highlight">Accessibilité aux Actifs Numériques</span>: En tokenisant votre
+                                entreprise...</li>
+                                <li><span class="highlight">Autonomie Financière</span>: Grâce à un accès en temps réel à l'investissement décentralisé et à un marché numérique diversifié facilitant les transactions.</li>
+                            </ul>
+
+                        <h2 style="font-size: 24px;  color: orange;">Pour les Entrepreneurs et Investisseurs</h2> <!-- Reduced subtitle font size -->
+                        <p>Entrepreneurs : Utilisez la plateforme For-Trade pour transformer la performance de votre
+                            entreprise en actifs numériques tangibles...</p>
+
+                        <p>Investisseurs : Profitez de l'opportunité d'investir dans des tokens d'entreprises
+                            prometteuses...</p>
+
+                        <h2 style="font-size: 24px; color: orange;">Opportunités et Avantages de  For-Trade</h2> <!-- Reduced subtitle font size -->
+                        <ul>
+                            <li><span class="highlight">Innovation Financière</span>: Soyez à la frontière de
+                                l'innovation financière...</li>
+                            <li><span class="highlight">Sécurité et Transparence</span>: Toutes les transactions sont
+                                sécurisées par la technologie blockchain...</li>
+                            <li><span class="highlight">Soutien Continu</span>: For-Trade est là pour accompagner chaque entreprise dans son parcours de tokenisation...</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Colonne de droite avec quatre sections -->
+                <div class="col-md-6">
+                    <!-- Notre Mission -->
+                    <div class="row mb-4">
+                        <div class="col-sm-6" >
+                            <img class="about-image" src="https://via.placeholder.com/150" alt="Notre Mission">
+                        </div>
+                        <div class="col-sm-6" style="padding-left: 3px;">
+                            <i class="fa fa-rocket" style="color: gold;"></i>
+                            <span style="color: black; font-weight: bold; font-size: larger; color: orange;">Notre Mission</span><br>
+                            <p>For-Trade mène la révolution financière et commerciale en fournissant des outils
+                                innovants pour les entrepreneurs et investisseurs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Notre Vision -->
+                    <div class="row mb-4">
+                        <div class="col-sm-6" >
+                            <img class="about-image" src="https://via.placeholder.com/150" alt="Notre Vision">
+                        </div>
+                        <div class="col-sm-6" style="padding-left: 3px;">
+                            <i class="fa fa-eye" style="color: gold;"></i>
+                            <span style="color: black; font-weight: bold; font-size: larger; color: orange;">Notre Vision</span><br>
+                            <p>Nous envisageons un monde financier sans frontières, accessible à tous, propice à la
+                                croissance et à l'innovation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Intégrité et Engagement -->
+                    <div class="row mb-4">
+                        <div class="col-sm-6" >
+                            <img class="about-image" src="https://via.placeholder.com/150" alt="Intégrité et Engagement">
+                        </div>
+                        <div class="col-sm-6" style="padding-left: 3px;">
+                            <i class="fa fa-eye" style="color:gold;"></i>
+                            <span style="color: black; font-weight: bold; font-size: larger; color: orange;">Intégrité et Engagement</span><br>
+                            <p>Nous agissons avec intégrité et nous engageons à soutenir nos clients à chaque étape de leur parcours.</p>
+                              
+                        </div>
+                    </div>
+                    <!-- Communauté et Support -->
+                    <div class="row mb-4">
+                        <div class="col-sm-6">
+                            <img class="about-image" src="https://via.placeholder.com/150" alt="Communauté et Support">
+                        </div>
+                        <div class="col-sm-6" style="padding-left: 3px;">
+                            <i class="fa fa-users" style="color: gold;"></i>
+                            <span style="color: black; font-weight: bold; font-size: larger; color: orange;">Communauté et
+                                Support</span><br>
+                            <p>La communauté est au cœur de For-Trade, nous bâtissons un réseau solide et offrons un
+                                support constant.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+    </section>

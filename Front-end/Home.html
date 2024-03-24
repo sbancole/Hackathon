@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For-Trade</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <!-- En-tête fixé en haut -->
+    <header class="navbar navbar-expand-lg navbar-dark  fixed-top">
+        <div class="container-fluid"> <!--`container-fluid` pour une largeur pleine page -->
+            <a class="navbar-brand" href="/">
+                <img src="images/logo.png" alt="Logo For-Trade" style="height: 40px;">
+                <span  style="color: gold;">For-Trade</span>
+            </a>
+            <!-- Reste du code de la barre de navigation... -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+                <button  type="submit" class="btn btn-warning ml-2" onclick="redirectUser()">S'inscrire</button>
+                <a href="login.html" class="btn btn-success ml-2">
+                 </i> Connexion
+              </a>
+              
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Bannière Principale -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-content">
+                    <h1>Bienvenue sur For-Trade</h1>
+                    <p>Découvrez la plateforme d'investissement et de commerce de nouvelle génération.</p>
+                    <p>Nos services pour les entreprises, les entrepreneurs et les investisseurs.</p>
+                    <button class="btn btn-primary">En savoir plus</button>
+                    <button class="btn btn-success ">S'inscrire</button>
+                </div>
+                <div class="col-md-6 carousel-container">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/image1.png" class="d-block w-100" alt="Image 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/crypto-b.jpg" class="d-block w-100" alt="Image 2">
+                            </div>
+                            <!-- Ajoutez plus d'éléments ici si nécessaire -->
+                        </div>
+                    </div>
+    </section>
+  
+ <!-- Market Overview Section -->
+<section class="market-overview bg-dark text-light py-5">
+    <div class="container">
+      <!-- Section Heading -->
+      <div class="row">
+        <div class="col text-center mb-4">
+          <h2>Aperçu du Marché</h2>
+          <p>Données de trading actualisées en temps réel</p>
+        </div>
+      </div>
+  
+      <!-- Market Data -->
+      <div class="row">
+        <!-- Popular Cryptos -->
+        <div class="col-lg-3 col-md-6 mb-3">
+          <div class="market-data-box">
+            <h4 class="d-flex justify-content-between align-items-center">
+              <span>Actifs Populaires</span>
+              <a href="#" class="plus-link badge">Plus <i class="fas fa-chevron-right"></i></a>
+            </h4>
+            <!-- List group for cryptos -->
+            <ul class="list-group list-group-flush">
+              <!-- List items for cryptos -->
+              <li class="list-group-item bg-transparent">FOR <span class="badge badge-success ml-2">$383.30</span> <span class="badge badge-success ml-2">+2.21%</span></li>
+              <li class="list-group-item bg-transparent">TEC <span class="badge badge-success ml-2">$573.10</span>  <span class="badge badge-success ml-2">+3.48%</span></li>
+              <li class="list-group-item bg-transparent">HLH <span class="badge badge-success ml-2">$142.20 </span><span class="badge badge-success ml-2">+1.75%</span></li>
+              <!-- More list items -->
+            </ul>
+          </div>
+        </div>
+  
+        <!-- New Listings -->
+        <div class="col-lg-3 col-md-6 mb-3">  
+          <div class="market-data-box">
+            <h4 class="d-flex justify-content-between align-items-center">
+              <span>Nouveaux Listings</span>
+              <a href="#" class="plus-link badge  ml-2">Plus <i class="fas fa-chevron-right"></i></a>
+            </h4>
+            <ul class="list-group list-group-flush">
+              <!-- List items for new listings -->
+              <li class="list-group-item bg-transparent">INN <span class="badge badge-warning ml-2"> $5.67</span><span class="badge badge-warning ml-2">-0.86%</span></li>
+              <li class="list-group-item bg-transparent">EDU <span class="badge badge-warning ml-2">$1.98</span><span class="badge badge-warning ml-2">-2.54%</span></li>
+              <li class="list-group-item bg-transparent">SOL  <span class="badge badge-warning ml-2">$10.45</span><span class="badge badge-warning ml-2">-1.09%</span></li>
+              <!-- More list items -->
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Top Gainers -->
+        <div class="col-lg-3 col-md-6 mb-3">
+          <div class="market-data-box">
+            <h4 class="d-flex justify-content-between align-items-center">
+              <span>Actifs en Hausse</span>
+              <a href="#" class="plus-link badge">Plus <i class="fas fa-chevron-right"></i></a>
+            </h4>
+            <ul class="list-group list-group-flush">
+              <!-- List items for top gainers -->
+              <li class="list-group-item bg-transparent">GRO <span class="badge badge-success ml-2">$8.73</span><span class="badge badge-success ml-2">+4.96%</span></li>
+              <li class="list-group-item bg-transparent">FAR <span class="badge badge-success ml-2">$2.56 </span> <span class="badge badge-success ml-2">+6.12%</span></li>
+              <li class="list-group-item bg-transparent">FIB <span class="badge badge-success ml-2">+2.30%</span> <span class="badge badge-success ml-2">+2.30%</span></li>
+              <!-- More list items -->
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Top by Volume -->
+        <div class="col-lg-3 col-md-6 mb-3">
+          <div class="market-data-box">
+            <h4 class="d-flex justify-content-between align-items-center">
+              <span>Meilleures par Volume</span>
+              <a href="#" class="plus-link badge">Plus <i class="fas fa-chevron-right"></i></a>
+            </h4>
+            <ul class="list-group list-group-flush">
+              <!-- List items for top by volume -->
+              <li class="list-group-item bg-transparent">DAT <span class="badge badge-primary ml-2">$60.02K</span>  <span class="badge badge-primary ml-2">+5.64%</span></li>
+              <li class="list-group-item bg-transparent">CLD  <span class="badge badge-primary ml-2">$47.5K</span>  <span class="badge badge-primary ml-2">+4.20%</span></li>
+              <li class="list-group-item bg-transparent">STRM <span class="badge badge-primary ml-2">$89.3K</span>  <span class="badge badge-primary ml-2">+7.89%</span></li>
+              <!-- More list items -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+   <section>
+    <h1 class="text-center" style="color: white; padding-bottom: 15px; ; padding-top: 15px;">Aperçu du marché</h1>
+    <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-dark">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Prix</th>
+                  <th>Variation</th>
+                  <th>Volume 24 h</th>
+                  <th>Capitalisation</th>
+                  <th>Secteur d'activité</th>
+                </tr>
+              </thead>
+              <tbody id="stocks-body">
+                <!-- Les données des stocks seront insérées ici -->
+                <!-- Exemple de 20 lignes de données -->
+                <tr>
+                  <td><i class="fab fa-apple logo-color-1"></i> TechnoGlobe</td>
+                  <td>120€</td>
+                  <td class="positive">+1.50%</td>
+                  <td>2M</td>
+                  <td>50B€</td>
+                  <td>Technologie</td>
+                </tr>
+                <tr>
+                  <td><i class="fab fa-google logo-color-2"></i> Financio</td>
+                  <td>98€</td>
+                  <td class="negative">-0.85%</td>
+                  <td>1.5M</td>
+                  <td>75B€</td>
+                  <td>Finance</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-hospital logo-color-3"></i> HealthFirst</td>
+                  <td>110€</td>
+                  <td class="positive">+2.00%</td>
+                  <td>1.8M</td>
+                  <td>45B€</td>
+                  <td>Santé</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-leaf logo-color-4"></i> EcoTech</td>
+                  <td>105€</td>
+                  <td class="negative">-1.20%</td>
+                  <td>1.6M</td>
+                  <td>60B€</td>
+                  <td>Environnement</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-car logo-color-5"></i> AutoWorld</td>
+                  <td>115€</td>
+                  <td class="positive">+1.80%</td>
+                  <td>2.3M</td>
+                  <td>70B€</td>
+                  <td>Automobile</td>
+                </tr>
+                <!-- Ajoutez d'autres lignes de données avec des icônes Font Awesome pour les logos d'autres entreprises -->
+                <tr>
+                  <td><i class="fas fa-space-shuttle logo-color-1"></i> AeroSpace</td>
+                  <td>125€</td>
+                  <td class="positive">+2.50%</td>
+                  <td>3M</td>
+                  <td>80B€</td>
+                  <td>Aérospatiale</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-tv logo-color-2"></i> MediaMasters</td>
+                  <td>95€</td>
+                  <td class="negative">-1.30%</td>
+                  <td>1.7M</td>
+                  <td>55B€</td>
+                  <td>Médias</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-utensils logo-color-3"></i> FoodFusion</td>
+                  <td>130€</td>
+                  <td class="positive">+2.20%</td>
+                  <td>2.5M</td>
+                  <td>65B€</td>
+                  <td>Alimentation</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-university logo-color-4"></i> BankingFirst</td>
+                  <td>85€</td>
+                  <td class="negative">-0.75%</td>
+                  <td>1.4M</td>
+                  <td>40B€</td>
+                  <td>Finance</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-solar-panel logo-color-5"></i> EnergyEco</td>
+                  <td>140€</td>
+                  <td class="positive">+3.00%</td>
+                  <td>3.5M</td>
+                  <td>90B€</td>
+                  <td>Énergie</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-plane logo-color-1"></i> TravelTrax</td>
+                  <td>100€</td>
+                  <td class="negative">-1.00%</td>
+                  <td>1.6M</td>
+                  <td>70B€</td>
+                  <td>Voyages</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-prescription-bottle logo-color-2"></i> PharmaFuture</td>
+                  <td>150€</td>
+                  <td class="positive">+2.75%</td>
+                  <td>4M</td>
+                  <td>100B€</td>
+                  <td>Pharmacie</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-hard-hat logo-color-3"></i> ConstructionCo</td>
+                  <td>80€</td>
+                  <td class="negative">-0.50%</td>
+                  <td>1.2M</td>
+                  <td>35B€</td>
+                  <td>Construction</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-store logo-color-4"></i> RetailRise</td>
+                  <td>120€</td>
+                  <td class="positive">+2.25%</td>
+                  <td>3.2M</td>
+                  <td>85B€</td>
+                  <td>Commerce de détail</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-satellite-dish logo-color-5"></i> TelecomTech</td>
+                  <td>90€</td>
+                  <td class="negative">-1.10%</td>
+                  <td>1.3M</td>
+                  <td>55B€</td>
+                  <td>Télécommunications</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-graduation-cap logo-color-1"></i> EducationEdge</td>
+                  <td>110€</td>
+                  <td class="positive">+1.90%</td>
+                  <td>2M</td>
+                  <td>60B€</td>
+                  <td>Éducation</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-handshake logo-color-2"></i> InsuranceInc</td>
+                  <td>70€</td>
+                  <td class="negative">-0.80%</td>
+                  <td>1M</td>
+                  <td>30B€</td>
+                  <td>Assurance</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-industry logo-color-3"></i> ManufactureMax</td>
+                  <td>130€</td>
+                  <td class="positive">+2.00%</td>
+                  <td>3.5M</td>
+                  <td>95B€</td>
+                  <td>Fabrication</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-building logo-color-4"></i> RealEstateRise</td>
+                  <td>100€</td>
+                  <td class="negative">-0.90%</td>
+                  <td>1.4M</td>
+                  <td>40B€</td>
+                  <td>Immobilier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+   
+
+
+
+
+    <!-- Section Nos Services -->
+    <section class="services-section  text-white py-5">
+        <div class="container">
+            <h2 class="text-center">Nos Services</h2>
+            <!-- Premier groupe de services visible par défaut -->
+            <div id="serviceGroup1" class="row service-group">
+                <!-- Vos 3 premiers services ici -->
+                <!-- Création et Gestion d'Entreprise -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <div class="service-icon bg-light text-primary mb-3">
+                                <i class="fas fa-building fa-2x" style="color: gold;"></i>
+                            </div>
+                            <h5 class="card-title">Création et Gestion d'Entreprise</h5>
+                            <p class="card-text">Accompagnement étape par étape pour transformer votre vision en une
+                                entreprise florissante.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plateforme de Trading Avancée -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <div class="service-icon bg-light text-primary mb-3">
+                                <i class="fas fa-chart-line fa-2x "style="color: gold;"></i>
+                            </div>
+                            <h5 class="card-title">Plateforme de Trading Avancée</h5>
+                            <p class="card-text">Une plateforme intuitive pour négocier des actions, des cryptomonnaies
+                                et plus, avec des outils d'analyse de pointe.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financement et Solutions de Crédit -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <div class="service-icon bg-light text-primary mb-3">
+                                <i class="fas fa-hand-holding-usd fa-2x" style="color: gold;"></i>
+                            </div>
+                            <h5 class="card-title">Financement et Solutions de Crédit</h5>
+                            <p class="card-text">Des options de financement flexibles pour propulser votre croissance à
+                                tous les niveaux.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Deuxième groupe de services caché par défaut -->
+            <div id="serviceGroup2" class="row service-group" style="display: none;">
+                <!-- Vos services suivants ici -->
+                <!-- Réseau Professionnel et Mentorat -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <div class="service-icon bg-light text-primary mb-3">
+                                <i class="fas fa-users fa-2x"style="color: gold;"></i>
+                            </div>
+                            <h5 class="card-title">Réseau  et Mentorat</h5>
+                            <p class="card-text">Connectez-vous avec des mentors et des professionnels pour guider votre
+                                parcours entrepreneurial.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketplace E-commerce -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <div class="service-icon bg-light text-primary mb-3">
+                                <i class="fas fa-store fa-2x"style="color: gold;"></i>
+                            </div>
+                            <h5 class="card-title">Marketplace E-commerce</h5>
+                            <p class="card-text">Lancez et développez votre commerce en ligne avec notre marketplace
+                                accessible et sécurisée.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outils de Gestion d'Actifs -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <div class="service-icon bg-light text-primary mb-3">
+                                <i class="fas fa-wallet fa-2x"style="color: gold;"></i>
+                            </div>
+                            <h5 class="card-title">Outils de Gestion d'Actifs</h5>
+                            <p class="card-text">Des outils pour suivre et gérer vos investissements, actifs et
+                                portefeuilles avec facilité.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Troisième groupe de services caché par défaut -->
+            <div id="serviceGroup3" class="row service-group" style="display: none;">
+                <!-- Sécurité et Conformité -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <div class="service-icon bg-light text-primary mb-3">
+                                <i class="fas fa-lock fa-2x"style="color: gold;"></i>
+                            </div>
+                            <h5 class="card-title">Sécurité et Conformité</h5>
+                            <p class="card-text">Sécurisation des transactions et des données avec des normes de
+                                conformité strictes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analyse de Données et Insights -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <div class="service-icon bg-light text-primary mb-3">
+                                <i class="fas fa-chart-bar fa-2x"style="color: gold;"></i>
+                            </div>
+                            <h5 class="card-title">Analyse de Données et Insights</h5>
+                            <p class="card-text">Utilisez la puissance des données pour éclairer vos décisions
+                                d'investissement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formation et Ressources Éducatives -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <div class="service-icon bg-light text-primary mb-3">
+                                <i class="fas fa-book-open fa-2x"style="color: gold;"></i>
+                            </div>
+                            <h5 class="card-title"> Ressources Éducatives</h5>
+                            <p class="card-text">Accédez à une bibliothèque complète de ressources pour continuer à
+                                apprendre et à vous développer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Quatrième groupe de services caché par défaut -->
+            <div id="serviceGroup4" class="row service-group" style="display: none;">
+                <!-- Espace Entreprise -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <div class="service-icon bg-light text-primary mb-3">
+                                <i class="fas fa-store fa-2x"style="color: gold;"></i>
+                            </div>
+                            <h5 class="card-title">Espace Entreprise</h5>
+                            <p class="card-text"> vitrine d'entreprise pour vendre vos services, recruter des talents et
+                                collaborer avec des clients.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tokenisation du Chiffre d'Affaires -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <div class="service-icon bg-light text-primary mb-3">
+                                <i class="fas fa-coins fa-2x"style="color: gold;"></i>
+                            </div>
+                            <h5 class="card-title">Tokenisation des Actifs</h5>
+                            <p class="card-text">Transformez votre chiffre d'affaires en actifs numériques tokenisés
+                                pour une nouvelle ère de finance numérique.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Support Client 24/7 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <div class="service-icon bg-light text-primary mb-3">
+                                <i class="fas fa-headset fa-2x"style="color: gold;"></i>
+                            </div>
+                            <h5 class="card-title">Support Client 24/7</h5>
+                            <p class="card-text">Notre équipe d'assistance est disponible à tout moment pour répondre à
+                                vos questions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Boutons de navigation -->
+            <div class="text-center mt-4">
+                <button class="btn btn-secondary prev-btn" style="display:none;">Précédent</button>
+                <button class="btn btn-warning ml-2 next-btn">Suivant</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="final-cta text-center  " style="background-color: #181a20;">
+        <h2>Prêt à rejoindre For-Trade ?</h2>
+        <button class="btn btn-lg btn-success">Créez votre compte</button>
+    </section>
+
+
+<!-- Pied de Page -->
+<footer class="footer text-white">
+    <div class="container py-5">
+        <div class="row">
+            <!-- Communauté -->
+            <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
+                <h5>Communauté</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-users"></i> Forums</li>
+                    <li><i class="fab fa-facebook-f"></i> Réseaux sociaux</li>
+                    <li><i class="fas fa-handshake"></i> Partenariats</li>
+                    <li><i class="fas fa-user-friends"></i> Programmes contributeurs</li>
+                    <li><i class="fas fa-user-tie"></i> Ambassadeurs</li>
+                </ul>
+            </div>
+
+            <!-- For-Trade Informations -->
+            <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
+                <h5>For-Trade</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">À propos de nous</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Carrières</a></li>
+                    <li><a href="#">Événements</a></li>
+                    <li><a href="#">Nouvelles et Mises à jour</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                </ul>
+            </div>
+
+            <!-- Produits et Services -->
+            <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
+                <h5>Produits</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Trading de cryptos</a></li>
+                    <li><a href="#">Marché des tokens</a></li>
+                    <li><a href="#">Gestion de portefeuille</a></li>
+                    <li><a href="#">Solutions d'investissement</a></li>
+                    <li><a href="#">API de trading</a></li>
+                </ul>
+            </div>
+
+            <!-- Ressources Éducatives -->
+            <div class="col-lg-3 col-md-6">
+                <h5>Ressources</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Centre d'aide</a></li>
+                    <li><a href="#">Tutoriels</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Analyses de marché</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center py-3"  >
+            <p>© 2024 For-Trade. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="D:/For-Trade/Front-end/home.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+function redirectUser() {
+  // Empêchez la soumission du formulaire si nécessaire
+  event.preventDefault();
+  
+  // Redirection vers la page souhaitée
+  window.location.href = 'login.html'; // Remplacez 'page_de_destination.html' par l'URL de votre choix
+}
+
+</script>
+
+</body>
+
+</html>

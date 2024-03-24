@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Trade Registration</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="login.css">
+
+</head>
+ 
+<body>
+    <!-- En-tête fixé en haut -->
+ <header class="navbar navbar-expand-lg navbar-dark  fixed-top">
+    <div class="container-fluid"> <!--`container-fluid` pour une largeur pleine page -->
+        <a class="navbar-brand" href="/">
+            <img src="images/logo.png" alt="Logo For-Trade" style="height: 40px;">
+            <span  style="color: gold;">For-Trade</span>
+        </a>
+        <!-- Reste du code de la barre de navigation... -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="Home.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">À propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+            <button class="btn btn-warning ml-2">S'inscrire</button>
+            <button class="btn btn-light ml-2">Connexion</button>
+        </div>
+    </div>
+</header>
+<section class="hero-section">
+
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Inscription For Trade</h2>
+                        <form id="registrationForm">
+
+                            <!-- Type d'utilisateur -->
+                            <div class="form-group">
+                                <label for="userType">Type d'utilisateur:</label>
+                                <select name="userType" id="userType" class="form-control" onchange="displayFields()">
+                                    <option value="basic">Utilisateur Basique</option>
+                                    <option value="investor">Investisseur</option>
+                                    <option value="enterprise">Entreprise</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Champs pour Utilisateur Basique -->
+                            <div id="basicFields" class="user-fields">
+                                <div class="form-group">
+                                    <label for="basicName">Nom complet:</label>
+                                    <input type="text" class="form-control" id="basicName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="basicEmail">Email:</label>
+                                    <input type="email" class="form-control" id="basicEmail">
+                                </div>
+                                <div class="form-group">
+                                    <label for="basicPhone">Téléphone (optionnel):</label>
+                                    <input type="tel" class="form-control" id="basicPhone">
+                                </div>
+                            </div>
+
+                          <!-- Champs pour Investisseur -->
+<div id="investorFields" class="user-fields" style="display: none;">
+    <div class="form-group">
+        <label for="investorName">Nom complet:</label>
+        <input type="text" class="form-control" id="investorName" placeholder="Entrez votre nom complet">
+    </div>
+    <div class="form-group">
+        <label for="investorEmail">Email:</label>
+        <input type="email" class="form-control" id="investorEmail" placeholder="Entrez votre email">
+    </div>
+    <div class="form-group">
+        <label for="investorPhone">Numéro de téléphone:</label>
+        <input type="tel" class="form-control" id="investorPhone" placeholder="Entrez votre numéro de téléphone">
+    </div>
+    <div class="form-group">
+        <label for="investorCountry">Pays de résidence:</label>
+        <input type="text" class="form-control" id="investorCountry" placeholder="Entrez votre pays de résidence">
+    </div>
+    <div class="form-group">
+        <label for="investorExperience">Expérience en investissement:</label>
+        <select class="form-control" id="investorExperience">
+            <option>Débutant</option>
+            <option>Intermédiaire</option>
+            <option>Avancé</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="investorFundsSource">Source des fonds:</label>
+        <input type="text" class="form-control" id="investorFundsSource" placeholder="Origine des fonds à investir">
+    </div>
+    <div class="form-group">
+        <label for="investmentGoals">Objectifs d'investissement:</label>
+        <input type="text" class="form-control" id="investmentGoals" placeholder="Décrivez vos objectifs d'investissement">
+    </div>
+    <div class="form-group">
+        <label for="riskTolerance">Niveau de tolérance au risque:</label>
+        <select class="form-control" id="riskTolerance">
+            <option>Faible</option>
+            <option>Moyen</option>
+            <option>Élevé</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="investorIdDocument">Documents d'identité (télécharger):</label>
+        <input type="file" class="form-control-file" id="investorIdDocument">
+    </div>
+    <div class="form-group">
+        <label for="investorBankInfo">Informations bancaires:</label>
+        <input type="text" class="form-control" id="investorBankInfo" placeholder="Informations pour les transactions financières">
+    </div>
+</div>
+
+
+                           <!-- Champs pour Entreprise -->
+<div id="enterpriseFields" class="user-fields" style="display: none;">
+    <div class="form-group">
+        <label for="enterpriseName">Raison sociale:</label>
+        <input type="text" class="form-control" id="enterpriseName" placeholder="Nom de l'entreprise">
+    </div>
+    <div class="form-group">
+        <label for="enterpriseSIREN">Numéro d'identification fiscale (SIREN):</label>
+        <input type="text" class="form-control" id="enterpriseSIREN" placeholder="SIREN">
+    </div>
+    <div class="form-group">
+        <label for="enterpriseAddress">Adresse physique de l'entreprise:</label>
+        <input type="text" class="form-control" id="enterpriseAddress" placeholder="Adresse complète">
+    </div>
+    <div class="form-group">
+        <label for="enterpriseSector">Secteur d'activité:</label>
+        <input type="text" class="form-control" id="enterpriseSector" placeholder="Secteur d'activité">
+    </div>
+    <div class="form-group">
+        <label for="enterpriseSize">Taille de l'entreprise:</label>
+        <select class="form-control" id="enterpriseSize">
+            <option>Petite (1-10 employés)</option>
+            <option>Moyenne (11-50 employés)</option>
+            <option>Grande (Plus de 50 employés)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="enterpriseContactEmail">Adresse e-mail de contact:</label>
+        <input type="email" class="form-control" id="enterpriseContactEmail" placeholder="E-mail">
+    </div>
+    <div class="form-group">
+        <label for="enterpriseContactPhone">Numéro de téléphone de contact:</label>
+        <input type="tel" class="form-control" id="enterpriseContactPhone" placeholder="Téléphone">
+    </div>
+    <div class="form-group">
+        <label for="enterpriseLegalStatus">Statuts juridiques:</label>
+        <input type="text" class="form-control" id="enterpriseLegalStatus" placeholder="Statuts juridiques de l'entreprise">
+    </div>
+    <div class="form-group">
+        <label for="enterpriseLegalDocuments">Documents légaux (télécharger):</label>
+        <input type="file" class="form-control-file" id="enterpriseLegalDocuments">
+    </div>
+    <div class="form-group">
+        <label for="enterpriseHeadquarterCountry">Pays du siège social:</label>
+        <input type="text" class="form-control" id="enterpriseHeadquarterCountry" placeholder="Pays du siège">
+    </div>
+    <div class="form-group">
+        <label for="enterpriseIDDocument">Document d'identité du représentant (télécharger):</label>
+        <input type="file" class="form-control-file" id="enterpriseIDDocument">
+    </div>
+    <div class="form-group">
+        <label for="enterpriseBankInfo">Informations bancaires:</label>
+        <input type="text" class="form-control" id="enterpriseBankInfo" placeholder="Informations bancaires pour transactions">
+    </div>
+</div>
+
+<button type="submit" class="btn btn-primary mt-4" onclick="redirectUser()">S'inscrire</button>
+
+
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="login.js"></script> <!-- Lien vers votre fichier JavaScript -->
+    <script>
+        function redirectUser() {
+            // Empêchez la soumission du formulaire si nécessaire
+            event.preventDefault();
+            
+            // Redirection vers la page souhaitée
+            window.location.href = 'process_validation.html'; // Remplacez 'page_de_destination.html' par l'URL de votre choix
+        }
+        </script>
+</body>
+</html>

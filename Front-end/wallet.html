@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - For-Trade</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <style>
+        body { font-family: 'Nunito', sans-serif; }
+        .wallet-container { margin-top: 80px; }
+        .wallet-card { background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,.1); }
+        .card-header { background-color: #007bff; color: #fff; }
+        .card-body { padding: 20px; }
+        .wallet-details { margin-bottom: 20px; }
+        .detail-item { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <!-- En-tête fixé en haut -->
+    <header class="navbar navbar-expand-lg navbar-dark  fixed-top">
+        <div class="container-fluid"> <!--`container-fluid` pour une largeur pleine page -->
+            <a class="navbar-brand" href="/">
+                <img src="images/logo.png" alt="Logo For-Trade" style="height: 40px;">
+                <span  style="color: gold;">For-Trade</span>
+            </a>
+            <!-- Reste du code de la barre de navigation... -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="Home.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="userSpace.html">Profile</a></li>
+                </ul>
+                <button  type="submit" class="btn btn-warning ml-2" onclick="redirectUser()">S'inscrire</button>
+                <button class="btn btn-light ml-2">Connexion</button>
+            </div>
+        </div>
+    </header>
+    <div class="container wallet-container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="wallet-card">
+                    <div class="card-header text-center">
+                        <i class="fas fa-wallet"></i> Mon Wallet 
+                    </div>
+                    <div class="card-body">
+                        <div class="detail-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            Capitaux reçus : <span class="ml-auto" id="capitauxRecus">0 $</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-piggy-bank"></i>
+                            Liquidités disponibles : <span class="ml-auto" id="liquiditesDisponibles">0 $</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-coins"></i>
+                            Valeur totale des Tokens : <span class="ml-auto" id="valeurTokens">0 $</span>
+                        </div>
+                        <!-- Ajouter d'autres détails ici -->
+                        <div class="wallet-actions mt-4">
+                            <button class="btn btn-success"><i class="fas fa-plus"></i> Ajouter des fonds</button>
+                            <button class="btn btn-danger"><i class="fas fa-minus"></i> Retirer des fonds</button>
+                            <button class="btn btn-info"><i class="fas fa-exchange-alt"></i> Échanger des Tokens</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Exemple de script pour mettre à jour les informations du wallet
+        $(document).ready(function() {
+            // Simuler la récupération des données du wallet
+            // Les valeurs doivent être récupérées à partir de votre backend / API
+            $('#capitauxRecus').text('10,000');
+            $('#liquiditesDisponibles').text('5,000');
+            $('#valeurTokens').text('15,000');
+        });
+    </script>
+</body>
+</html>

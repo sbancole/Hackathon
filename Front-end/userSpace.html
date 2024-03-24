@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Entreprise - For-Trade</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="login.css">
+    <style>
+         body {
+            font-family: 'Nunito', sans-serif;
+        }
+        .sidebar {
+            min-height: 100vh;
+            border-right: 1px solid #ddd;
+        }
+        .sidebar-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .sidebar-item:hover, .sidebar-item.active {
+            background-color: #f8f9fa;
+            cursor: pointer;
+        }
+        .main-content {
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .content-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .icon-container {
+            display: inline-block;
+            width: 30px;
+        }
+        .loader-container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            color: #3498db;
+        }
+
+        .confirmation-checkmark {
+            text-align: center;
+            color: #28a745;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+     <!-- En-tête fixé en haut -->
+ <header class="navbar navbar-expand-lg navbar-dark  fixed-top">
+    <div class="container-fluid"> <!--`container-fluid` pour une largeur pleine page -->
+        <a class="navbar-brand" href="/">
+            <img src="images/logo.png" alt="Logo For-Trade" style="height: 40px;">
+            <span  style="color: gold;">For-Trade</span>
+        </a>
+        <!-- Reste du code de la barre de navigation... -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="Home.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">À propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+               
+            </ul>
+            <button class="btn btn-warning ml-2">S'inscrire</button>
+            <button class="btn btn-light ml-2">Connexion</button>
+            <a href="wallet.html" class="btn btn-success ml-2">
+                <i class="fas fa-wallet"></i> Mon Wallet
+            </a>
+                    </div>
+    </div>
+</header>
+
+<section class="hero-section"> 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 bg-light sidebar">
+                <h4 class="text-center mt-4"> </h4>
+                <div class="sidebar-item" onclick="showSection('creation-tokens')">
+                    <i class="fas fa-coins icon-container"></i>Création de Tokens
+                </div>
+                <div class="sidebar-item" onclick="showSection('portefeuille')">
+                    <i class="fas fa-wallet icon-container"></i>Portefeuille Numérique
+                </div>
+                <div class="sidebar-item" onclick="showSection('marche-echanges')">
+                    <i class="fas fa-exchange-alt icon-container"></i>Marché d'Échanges
+                </div>
+                <div class="sidebar-item" onclick="showSection('financement')">
+                    <i class="fas fa-hand-holding-usd icon-container"></i>Financement Participatif
+                </div>
+                <!-- Ajoutez d'autres éléments de menu ici -->
+                <div class="sidebar-item" onclick="showSection('gestion-projet')">
+                    <i class="fas fa-project-diagram icon-container"></i>Outils de Gestion de Projet
+                </div>
+                <div class="sidebar-item" onclick="showSection('analyses-commerciales')">
+                    <i class="fas fa-chart-bar icon-container"></i>Analyses Commerciales
+                </div>
+                <div class="sidebar-item" onclick="showSection('support-client')">
+                    <i class="fas fa-headset icon-container"></i>Support Client
+                </div>
+                <div class="sidebar-item" onclick="showSection('recrutement')">
+                    <i class="fas fa-user-plus icon-container"></i>Espace de Recrutement
+                </div>
+                <div class="sidebar-item" onclick="showSection('formation-ressources')">
+                    <i class="fas fa-book-reader icon-container"></i>Formation et Ressources
+                </div>
+            </div>
+            <div class="col-md-9 main-content">
+                <!-- Section de valorisation de l'entreprise -->
+                <div id="valorisation-entreprise" class="content-section">
+                    <h2>Valorisation de l'Entreprise</h2>
+                    <p>Remplissez les informations suivantes pour évaluer la valeur de votre entreprise.</p>
+                    <form id="valuationForm">
+                        <!-- Chiffre d'Affaires et Bénéfice -->
+                                            <!-- Passifs Totals -->
+                    <div class="form-group">
+                        <label for="passifsTotals">Passifs Totals (en $)</label>
+                        <input type="number" class="form-control" id="passifsTotals" placeholder="Valeur totale des passifs">
+                        <input type="file" class="form-control-file mt-2" id="justificatifPassifs" aria-describedby="justificatifPassifsHelp">
+                        <small id="justificatifPassifsHelp" class="form-text text-muted">Joindre les documents justifiant la valeur des passifs.</small>
+                    </div>
+
+                    <!-- Flux de Trésorerie -->
+                    <div class="form-group">
+                        <label for="fluxTresorerie">Flux de Trésorerie (en $)</label>
+                        <input type="number" class="form-control" id="fluxTresorerie" placeholder="Flux de trésorerie annuel">
+                        <input type="file" class="form-control-file mt-2" id="justificatifFluxTresorerie" aria-describedby="justificatifFluxTresorerieHelp">
+                        <small id="justificatifFluxTresorerieHelp" class="form-text text-muted">Joindre la déclaration de flux de trésorerie.</small>
+                    </div>
+
+                    <!-- Taux de Croissance Annuel -->
+                    <div class="form-group">
+                        <label for="tauxCroissance">Taux de Croissance Annuel (%)</label>
+                        <input type="number" class="form-control" id="tauxCroissance" placeholder="Taux de croissance annuel du chiffre d'affaires">
+                        <!-- Pas de document justificatif typique pour le taux de croissance, mais peut être inclus dans le rapport annuel ou d'autres analyses -->
+                        <small id="justificatifJuridiquesHelp" class="form-text text-muted">Joindre le rapport annuel ou d'autres analysess, et autres documents légaux.</small>
+
+                    </div>
+
+                    <!-- Position Concurrentielle -->
+                    <div class="form-group">
+                        <label for="positionConcurrentielle">Position Concurrentielle</label>
+                        <input type="text" class="form-control" id="positionConcurrentielle" placeholder="Description brève de la position concurrentielle">
+                        <!-- Peut inclure des rapports d'analystes de marché ou des études de positionnement -->
+                        <small id="justificatifJuridiquesHelp" class="form-text text-muted">Joindre rapports d'analystes de marché ou des études de positionnement et autres documents légaux.</small>
+
+                    </div>
+
+                    <!-- Stratégie Commerciale -->
+                    <div class="form-group">
+                        <label for="strategieCommerciale">Stratégie Commerciale</label>
+                        <textarea class="form-control" id="strategieCommerciale" rows="3" placeholder="Résumé de la stratégie commerciale"></textarea>
+                        <!-- Peut inclure des plans stratégiques ou des présentations d'entreprise -->
+                    </div>
+
+                    <!-- Documents juridiques et légaux -->
+                    <div class="form-group">
+                        <label>Documents Juridiques et Légaux</label>
+                        <input type="file" class="form-control-file mt-2" id="justificatifJuridiques" aria-describedby="justificatifJuridiquesHelp">
+                        <small id="justificatifJuridiquesHelp" class="form-text text-muted">Joindre les statuts de l'entreprise, extrait Kbis, et autres documents légaux.</small>
+                    </div>
+
+                    <button type="button" class="btn btn-primary">Évaluer l'Entreprise</button>
+
+            
+                <!-- Autres sections... -->
+                
+            </div>
+            
+            
+            
+            <div class="col-md-9 main-content">
+                <!-- Section de création de tokens -->
+                <div id="creation-tokens" class="content-section">
+                    <h2>Création de Tokens</h2>
+                    <p>Déposez de la liquidité pour générer vos tokens.</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="tokenName">Nom du Token</label>
+                            <input type="text" class="form-control" id="tokenName" placeholder="Entrez le nom du token">
+                        </div>
+                        <div class="form-group">
+                            <label for="totalSupply">Nombre total d'unités</label>
+                            <input type="number" class="form-control" id="totalSupply" placeholder="Entrez le nombre total d'unités">
+                        </div>
+                        <div class="form-group">
+                            <label for="liquidityAmount">Montant de la Liquidité (en $)</label>
+                            <input type="number" class="form-control" id="liquidityAmount" placeholder="Montant de la liquidité à déposer">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Créer le Token</button>
+                    </form>
+                </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let percent = 0;
+        const interval = setInterval(() => {
+            if (percent >= 100) {
+                clearInterval(interval);
+                document.querySelector('.loader-container').style.display = 'none';
+                document.getElementById('confirmationCheckmark').style.display = 'block';
+    
+                // Attend 2 secondes avant de rediriger
+                setTimeout(() => {
+                    window.location.href = 'userSpace.html'; // Remplacez 'nouvellePage.html' par l'URL de votre choix
+                }, 0.10); // 2500 millisecondes = 2 secondes
+            } else {
+                percent++;
+                document.getElementById('loaderPercentage').textContent = `${percent}%`;
+            }
+        }, 50);
+    </script>
+</script>
+</body>
+</html>

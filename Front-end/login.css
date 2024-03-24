@@ -1,0 +1,26 @@
+/* Styles supplémentaires pour personnaliser le formulaire */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    margin-bottom: 2rem;
+}
+
+.form-control {
+    margin-bottom: 1rem;
+}
+
+/* Espacement entre les boutons et les champs de formulaire */
+.btn {
+    margin-top: 1rem;
+}
+
+/* Cacher par défaut les champs spécifiques aux utilisateurs */
+.user-fields {
+    display: none;
+}

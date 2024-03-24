@@ -1,0 +1,566 @@
+/* Styles globaux */
+body, html {
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+}
+
+.content-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    overflow-y: auto;
+    height: 500px; /* Adjust based on your content */
+  }
+
+  .content-container h1 {
+    color: #0275d8; /* Bootstrap primary color */
+    font-family: 'Arial', sans-serif;
+  }
+
+  .content-container h2 {
+    color: #5cb85c; /* Bootstrap success color */
+    font-family: 'Arial', sans-serif;
+  }
+
+  .content-container p, .content-container li {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .content-container .keyword {
+    color: #d9534f; /* Bootstrap danger color */
+    font-weight: bold;
+  }
+
+  .content-container .highlight {
+    background-color: #f0ad4e; /* Bootstrap warning color */
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: white;
+  }
+.container .row .col-lg-6 .content-box {
+    display: flex; /* Utilisez flexbox pour un meilleur contrôle */
+    align-items: center; /* Centre verticalement les éléments dans le conteneur */
+    justify-content: start; /* Alignement horizontal au début */
+    margin-bottom: 20px; /* Ajuste l'espace entre les rangées */
+}
+
+.container .row .col-lg-6 .content-box div {
+    display: flex;
+    align-items: center; /* Centre verticalement les éléments à l'intérieur */
+    margin-bottom: 10px; /* Réduit l'espace entre les éléments div */
+}
+.about-image {
+    max-width: 150px;  /* s'adapte à la largeur du conteneur */
+    height: auto;     /* maintient l'aspect ratio de l'image */
+    max-height: 150px; /* hauteur maximale que vous souhaitez pour vos images */
+    margin-right: 3px !important;
+}
+.col-sm-6 {
+    padding-left: 3px; /* Ajuster selon les besoins */
+    padding-right: 3px; /* Ajuster selon les besoins */
+}
+.container .row .col-lg-6 .content-box div i {
+    margin-right: 10px; /* Espace entre l'icône et le titre */
+}
+
+.container .row .col-lg-6 .content-box div img {
+    width: 150px; /* Taille fixe pour les images */
+    height: auto; /* Pour maintenir le ratio */
+    margin-right: 20px; /* Espace entre l'image et le texte */
+}
+
+/* Ajustements pour la réactivité */
+@media (max-width: 768px) {
+    .container .row .col-lg-6 .content-box {
+        flex-direction: column; /* Les éléments se placent verticalement sur les petits écrans */
+    }
+
+    .container .row .col-lg-6 .content-box div img {
+        margin-bottom: 10px; /* Espace au-dessous de l'image sur les petits écrans */
+    }
+}
+
+/* Styles pour la barre de navigation */
+.navbar {
+/*background-color: #004445;*/
+background-color: rgb(218, 16, 218);
+padding: 1rem;
+margin-bottom: 40px;
+
+}
+.navbar-brand img {
+    max-height: 40px;
+    margin-right: 10px;
+}
+
+/* Change la couleur des liens de la navigation en noir */
+.navbar-nav .nav-link {
+    color: white !important;
+}
+.navbar-nav .nav-link:hover {
+    color: orange !important;
+}
+
+.navbar-brand img {
+max-height: 40px;
+margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+color: #fff;
+margin: 0 10px;
+}
+
+
+/* Styles pour la section de bannière principale */
+.hero-section {
+padding: 40px 0;
+margin-top: 60px;
+}
+
+.text-content h1 {
+font-size: 2.5rem;
+color: #004445;
+}
+
+.text-content p {
+font-size: 1.2rem;
+color: #666;
+margin-bottom: 20px;
+}
+
+.carousel-container {
+width: 400px; /* Set a specific width or percentage */
+height: 300px; /* Set a specific height */
+overflow: hidden; /* Hide any overflow */
+position: relative; /* Positioning context for the absolute children */
+}
+
+.carousel-container img {
+width: 100%;
+height: 100%;
+object-fit: cover; /* This will cover the entire container, potentially cropping the image */
+display: block; /* Removes any extra space below the image */
+}
+
+
+/* Styles pour la section "À propos" */
+.about-section {
+padding: 40px 0;
+}
+
+.about-section h2 {
+font-size: 2rem;
+color: #004445;
+margin-bottom: 20px;
+}
+
+.about-section p {
+font-size: 1.2rem;
+color: #666;
+}
+
+/* Styles pour la section "Nos Services" */
+.services-section {
+/*background-color: #004445;*/
+background-color: black;
+color: #fff;
+padding: 40px 0;
+}
+
+.services-section h2 {
+font-size: 2rem;
+margin-bottom: 30px;
+}
+
+.card {
+background-color: #f8f9fa;
+border: none;
+}
+
+.card .card-title {
+color: #004445;
+font-size: 1.5rem;
+}
+
+.card .card-text {
+color: #666;
+}
+
+.card-body {
+display: flex;
+flex-direction: column;
+}
+
+.card-text {
+flex-grow: 1; /* Permet au texte de remplir l'espace disponible et de pousser tout autre contenu vers le bas. */
+}
+
+/* Styles pour les cartes de services */
+.card {
+transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation pour la transformation et l'ombre */
+cursor: pointer; /* Change le curseur pour indiquer que la carte est cliquable */
+}
+
+.card:hover {
+transform: scale(1.05); /* Agrandit légèrement la carte */
+box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ajoute une ombre pour un effet de profondeur */
+}
+
+.card:active {
+border: 2px solid #ffd700; /* Change la bordure lors du clic */
+box-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Ombre plus intense lors du clic */
+}
+
+/* Assurez-vous que le titre reste lisible et ne se déforme pas pendant l'animation */
+.card-title {
+transition: color 0.3s ease;
+}
+
+.card:hover .card-title {
+color: #ffd700; /* Change la couleur du titre au survol */
+}
+
+
+
+.card-body {
+flex: 1; /* Permet à la carte de s'étendre et de remplir l'espace disponible */
+}
+
+
+/* Styles pour le pied de page */
+.footer {
+background-color: #333;
+color: #fff;
+padding: 20px 0;
+font-size: 0.9rem;
+}
+
+/* Media queries pour les écrans plus petits */
+@media (max-width: 768px) {
+.hero-section, .about-section, .services-section {
+padding: 20px 0;
+}
+
+.text-content h1 {
+font-size: 2rem;
+}
+
+.services-section h2, .about-section h2 {
+font-size: 1.8rem;
+}
+
+.carousel-container {
+width: 100%;
+height: auto;
+}
+
+.carousel-container img {
+height: auto;
+}
+}
+.gallery-item {
+margin-bottom: 5px; /* Espacement entre les éléments */
+text-align: center; /* Centrer les éléments horizontalement */
+}
+
+.gallery-item img {
+max-width: 100%;
+height: auto;
+display: inline-block; /* Permet de centrer les images horizontalement */
+margin-bottom: 5px; /* Réduire l'espacement sous les images */
+}
+
+.gallery-item .title {
+margin-top: 5px; /* Espacement entre le titre et l'image */
+font-weight: bold;
+}
+/* Styles pour le texte sous l'image */
+.text-container {
+padding: 10px; /* Espacement intérieur */
+text-align: center; /* Texte centré */
+margin: auto; /* Centrer le conteneur */
+border-radius: 4px; /* Coins arrondis pour le conteneur de texte */
+}
+
+.text-container p {
+text-align: left; /* Justifier le texte */
+text-justify: inter-word; /* Justification entre les mots */
+margin-bottom: 0; /* Pas de marge en bas du paragraphe pour coller au bas du conteneur */
+}
+#features {
+background-color: #f8f9fa;
+}
+
+#features .feature-card {
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease-in-out;
+}
+
+#features .feature-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+#features .feature-card i {
+color: #007bff;
+}
+
+#features .card-title {
+font-size: 1.25rem;
+color: #333;
+}
+
+#features .card-text {
+font-size: 1rem;
+color: #555;
+}
+
+
+
+/* Styles pour les cartes de fonctionnalités */
+.feature-card {
+transition: box-shadow .3s, transform .3s;
+cursor: pointer;
+}
+
+.feature-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.feature-card .fa-3x {
+margin: 1rem 0;
+}
+
+.service-card {
+    height: 100%;
+}
+
+.service-icon {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+}
+
+.service-icon i {
+    font-size: 2.5rem;
+    color: #007bff;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    filter: invert(100%); /* Cela rendra les flèches blanches */
+    }
+    
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+    background-image: none; /* Supprimez l'image de fond par défaut si vous voulez utiliser des icônes font awesome */
+    }
+    
+    .carousel-control-prev {
+    left: -50px; /* Ajustez si nécessaire pour positionner correctement la flèche */
+    }
+    
+    .carousel-control-next {
+    right: -50px; /* Ajustez si nécessaire pour positionner correctement la flèche */
+    }
+    .carousel-control-prev, .carousel-control-next {
+    z-index: 1;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 50px; /* Ajustez la largeur selon vos besoins */
+        height: 50px; /* Ajustez la hauteur selon vos besoins */
+        background-color: transparent; /* Fond transparent */
+        border: none; /* Pas de bordure */
+        position: absolute; /* Position absolue */
+        top: 50%; /* Centrer verticalement */
+        transform: translateY(-50%); /* Centrer verticalement */
+        z-index: 1000; /* Assurer que les boutons sont au-dessus du carrousel */
+        cursor: pointer; /* Curseur de souris */
+    }
+    
+    .carousel-control-prev::before,
+    .carousel-control-next::before {
+        content: '';
+        border-style: solid;
+        border-width: 10px 12px; /* Ajustez la taille de la flèche */
+        display: inline-block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1001;
+    }
+    
+    .carousel-control-prev::before {
+        left: 15px; /* Positionner la flèche "Previous" */
+        border-color: transparent transparent transparent white; /* Couleur de la flèche "Previous" */
+    }
+    
+    .carousel-control-next::before {
+        right: 15px; /* Positionner la flèche "Next" */
+        border-color: transparent white transparent transparent; /* Couleur de la flèche "Next" */
+    }
+    .carousel-control-prev, .carousel-control-next {
+        z-index: 2;
+        }
+        
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+        background-image: none; /* Supprimez l'image de fond par défaut si vous voulez utiliser des icônes font awesome */
+        /* Ajoutez votre propre style d'icône ici si nécessaire */
+        }
+        
+        .about-section {
+            background-color: #f8f9fa; /* Couleur de fond légère pour toute la section */
+            padding: 50px 0; /* Espacement */
+        }
+        
+        .about-section h2 {
+            color: #007bff; /* Couleur bleue pour le titre */
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease both; /* Animation d'apparition */
+        }
+        
+        .icon-box {
+            background: #f9f9f9;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .icon-box:hover {
+            transform: scale(1.05);
+        }
+        
+        .icon-box .icon {
+            font-size: 3rem;
+            color: #007bff;
+            margin-right: 20px;
+            flex-shrink: 0; /* Empêche l'icône de se réduire */
+        }
+        
+        .icon-box h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px; /* Espacement entre le titre et le paragraphe */
+        }
+        
+        .icon-box p {
+            font-size: 1rem;
+            color: #555;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                transform: translate3d(0, 40px, 0);
+                opacity: 0;
+            }
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                transform: translate3d(-40px, 0, 0);
+                opacity: 0;
+            }
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+        }
+        .service-box {
+    border: 1px solid #ddd; /* Bordure de la boîte */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 20px; /* Espacement intérieur */
+    text-align: center; /* Texte centré */
+    transition: transform 0.3s ease; /* Animation douce pour l'effet de survol */
+    background-color: #fff; /* Couleur de fond */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre de la boîte */
+}
+
+.service-box:hover {
+    transform: translateY(-10px); /* Déplacement vers le haut au survol */
+}
+
+.service-icon {
+    font-size: 3rem; /* Taille de l'icône */
+    color: #007bff; /* Couleur de l'icône */
+    margin-bottom: 15px; /* Espacement sous l'icône */
+}
+
+.service-box h3 {
+    font-size: 1.25rem; /* Taille du titre */
+    color: #333; /* Couleur du titre */
+    margin-bottom: 10px; /* Espacement sous le titre */
+}
+
+.service-box p {
+    font-size: 0.9rem; /* Taille du paragraphe */
+    color: #666; /* Couleur du paragraphe */
+}
+
+.content-box {
+    padding: 5px; /* Réduit l'espacement interne */
+    padding-right: 0px;
+}
+
+.content-box img {
+    margin-bottom: 5px; /* Réduit la marge en bas de l'image */
+    max-width: 100%; /* Assure que l'image ne dépasse pas le conteneur */
+    height: auto; /* Maintient le ratio de l'image */
+}
+
+/* Ajustement pour les écrans plus petits */
+@media (max-width: 768px) {
+    .content-box {
+        padding: 10px; /* Espacement interne encore plus réduit pour les petits écrans */
+    }
+
+    .content-box img {
+        margin-bottom: 10px; /* Marge réduite pour les petits écrans */
+    }
+}
+
+
+.icon-box {
+    margin-bottom: 15px;
+}
+
+.icon-box i {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.icon-box h4 {
+    margin-bottom: 5px;
+}
+
+.container-center {
+    text-align: center;
+    margin-top: 20px; /* Ajoutez un peu d'espace au-dessus du titre si nécessaire */
+}

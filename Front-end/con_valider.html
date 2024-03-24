@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation de Profil</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        .loader-container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            color: #3498db;
+        }
+
+        .confirmation-checkmark {
+            text-align: center;
+            color: #28a745;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+     <!-- En-tête fixé en haut -->
+     <header class="navbar navbar-expand-lg navbar-dark  fixed-top">
+        <div class="container-fluid"> <!--`container-fluid` pour une largeur pleine page -->
+            <a class="navbar-brand" href="/">
+                <img src="images/logo.png" alt="Logo For-Trade" style="height: 40px;">
+                <span  style="color: gold;">For-Trade</span>
+            </a>
+            <!-- Reste du code de la barre de navigation... -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+                <button class="btn btn-warning ml-2">S'inscrire</button>
+                <button class="btn btn-light ml-2">Connexion</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="loader-container">
+            <div class="loader"></div>
+            <div id="loaderPercentage" class="loader-percentage">0%</div>
+        </div>
+        
+        <div id="confirmationCheckmark" class="confirmation-checkmark">
+            <i class="fas fa-check-circle fa-5x"></i>
+            <h3>Connexion Validé !</h3>
+           
+        </div>
+    </section>
+  
+    <script>
+        let percent = 0;
+        const interval = setInterval(() => {
+            if (percent >= 100) {
+                clearInterval(interval);
+                document.querySelector('.loader-container').style.display = 'none';
+                document.getElementById('confirmationCheckmark').style.display = 'block';
+    
+                // Attend 2 secondes avant de rediriger
+                setTimeout(() => {
+                    window.location.href = 'userSpace.html'; // Remplacez 'nouvellePage.html' par l'URL de votre choix
+                }, 0.10); // 2500 millisecondes = 2 secondes
+            } else {
+                percent++;
+                document.getElementById('loaderPercentage').textContent = `${percent}%`;
+            }
+        }, 50);
+    </script>
+    
+</body>
+</html>
